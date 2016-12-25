@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ayyash/Code/cpp/ds/disjoint_set/DisjointSet.cpp
+
+/Users/ayyash/Code/cpp/ds/disjoint_set/DisjointSet.h
+iostream
+-
+
+/Users/ayyash/Code/cpp/ds/disjoint_set/main.cpp
+DisjointSet.h
+/Users/ayyash/Code/cpp/ds/disjoint_set/DisjointSet.h
+
