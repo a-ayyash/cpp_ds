@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ayyash/Code/cpp/ds/heap/BinaryHeap.cpp
+BinaryHeap.h
+/Users/ayyash/Code/cpp/ds/heap/BinaryHeap.h
+cmath
+-
+
+/Users/ayyash/Code/cpp/ds/heap/BinaryHeap.h
+BinaryTreeNode.h
+/Users/ayyash/Code/cpp/ds/heap/BinaryTreeNode.h
+vector
+-
+iostream
+-
+
+/Users/ayyash/Code/cpp/ds/heap/BinaryTreeNode.h
+
+/Users/ayyash/Code/cpp/ds/heap/main.cpp
+BinaryHeap.h
+/Users/ayyash/Code/cpp/ds/heap/BinaryHeap.h
+

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ayyash/Code/cpp/ds/bst/BST.cpp
+BST.h
+/Users/ayyash/Code/cpp/ds/bst/BST.h
+vector
+-
+
+/Users/ayyash/Code/cpp/ds/bst/BST.h
+BSTNode.h
+/Users/ayyash/Code/cpp/ds/bst/BSTNode.h
+iostream
+-
+
+/Users/ayyash/Code/cpp/ds/bst/BSTNode.h
+
+/Users/ayyash/Code/cpp/ds/bst/main.cpp
+BST.h
+/Users/ayyash/Code/cpp/ds/bst/BST.h
+

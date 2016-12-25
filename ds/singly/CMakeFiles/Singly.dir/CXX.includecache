@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ayyash/Code/cpp/ds/singly/Node.cpp
+Node.h
+/Users/ayyash/Code/cpp/ds/singly/Node.h
+
+/Users/ayyash/Code/cpp/ds/singly/Node.h
+
+/Users/ayyash/Code/cpp/ds/singly/main.cpp
+singly.h
+/Users/ayyash/Code/cpp/ds/singly/singly.h
+iostream
+-
+
+/Users/ayyash/Code/cpp/ds/singly/singly.cpp
+singly.h
+/Users/ayyash/Code/cpp/ds/singly/singly.h
+
+/Users/ayyash/Code/cpp/ds/singly/singly.h
+Node.h
+/Users/ayyash/Code/cpp/ds/singly/Node.h
+
