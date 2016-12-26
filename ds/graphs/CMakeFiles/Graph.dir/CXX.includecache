@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ayyash/Code/cpp/ds/graphs/graph.cpp
+graph.h
+/Users/ayyash/Code/cpp/ds/graphs/graph.h
+
+/Users/ayyash/Code/cpp/ds/graphs/graph.h
+vertex.h
+/Users/ayyash/Code/cpp/ds/graphs/vertex.h
+vector
+-
+iostream
+-
+
+/Users/ayyash/Code/cpp/ds/graphs/main.cpp
+graph.h
+/Users/ayyash/Code/cpp/ds/graphs/graph.h
+
+/Users/ayyash/Code/cpp/ds/graphs/vertex.h
+
