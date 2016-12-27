@@ -65,48 +65,69 @@ bool Graph::HasPath(int key1, int key2) {
   return result;
 }
 
-Graph GetConnectedComponent(int cc) {}
-
-vector<int> ListConnectComponents() {}
-
-void Graph::DFS() {
-  /*
-  std::map<Vertex*, std::set<Vertex*> >::iterator map_itr = adj_map.begin();
+set<int> Graph::GetConnectedComponent(int cc) {
+  set<int> keys;
+  auto map_itr = adj_map.begin();
 
   while(map_itr != adj_map.end()) {
-    std::set<Vertex>::iterator itr = map_itr->second.begin();
-    Vertex vv = *itr;
-    vv.visited = true;
-    map_itr->second.erase(itr);
-    map_itr->second.insert(vv);
-    Explore(vv);
+    auto set_itr = map_itr->second.begin();
+
+    if (map_itr->first->ccID == cc) {
+      keys.insert((*map_itr->first).key);
+    }
+
+    while(set_itr != map_itr->second.end()){
+      if ((*set_itr)->ccID == cc) {
+        keys.insert((*set_itr)->key);
+      }
+
+      set_itr++;
+    }
+
     map_itr++;
   }
-  */
+
+  return keys;
+}
+
+
+void Graph::CalculateConnectedComponents() {
   auto itr = key_vertex.begin();
+  int cc = 0;
   while(itr != key_vertex.end()){
     if (!itr->second->visited) {
-      Explore(itr->second);
+      Explore(itr->second, cc);
+      cc++;
     }
 
     itr++;
   }
 }
 
-void Graph::Explore(Vertex *v) {
+void Graph::Previsit(Vertex *v) {
+  v->previsit_order = clock++;
+}
+
+void Graph::Postvisit(Vertex *v) {
+  v->postvisit_order = clock++;
+}
+
+void Graph::Explore(Vertex *v, int cc) {
   v->visited = true;
+  v->ccID = cc;
   cout << "NOW VISITING " << v->key << " visited = " << v << endl;
 
   auto nabors_itr = adj_map[v].begin();
+  Previsit(v);
 
   while (nabors_itr != adj_map[v].end()) {
     int key = (*nabors_itr)->key;
 
     if(!(*nabors_itr)->visited) {
-      Explore((*nabors_itr));
+      Explore((*nabors_itr), cc);
     }
     nabors_itr++;
   }
 
-  cout << "##############################" << endl;
+  Postvisit(v);
 }

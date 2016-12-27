@@ -7,22 +7,26 @@ using namespace std;
 
 class Graph {
 public:
-  virtual void AddEdge(int key1, int key2);
+  Graph() {
+    clock = 0;
+  }
 
+  virtual void AddEdge(int key1, int key2);
   set<Vertex*> GetNabors(int v) const;
   int count() const;
-
   bool HasPath(int key1, int key2);
-
-  Graph GetConnectedComponent(int cc);
-  vector<int> ListConnectComponents();
-  void DFS();
+  void CalculateConnectedComponents();
+  set<int> GetConnectedComponent(int cc);
 
 private:
-  void Explore(Vertex *v);
+  void Explore(Vertex *v, int cc);
+  void Previsit(Vertex *v);
+  void Postvisit(Vertex *v);
 
   std::map<Vertex*, std::set<Vertex*> > adj_map;
   std::map<int, Vertex*> key_vertex;
+
+  int clock;
 };
 
 

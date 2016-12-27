@@ -41,8 +41,15 @@ int main() {
 
   cout << "#######################################" << endl;
 
-  g2.DFS();
+  g2.CalculateConnectedComponents();
+  cout << "Connected Component 0" << endl;
+  auto s2 = g2.GetConnectedComponent(1);
+  auto itr2 = s2.begin();
+  while(itr2 != s2.end()) {
+    cout << *itr2 << endl;
+    itr2++;
+  }
 
-  cout << "5,4   = " << g2.HasPath(5,4) << endl;
+  //cout << "5,4   = " << g2.HasPath(5,4) << endl;
   return 0;
 }
