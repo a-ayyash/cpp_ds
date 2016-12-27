@@ -27,14 +27,23 @@ void Graph::AddEdge(int key1, int key2) {
   adj_map[v2].insert(v1);
 }
 
-set<Vertex*> Graph::GetNabors(int v) const{
+vector<int> Graph::GetNabors(int v) const{
   auto itr = key_vertex.find(v);
 
   if (itr != key_vertex.end()) {
     Vertex *vv = key_vertex.at(v);
-    return adj_map.at(vv);
+    vector<int> vec;
+    auto set = adj_map.at(vv);
+    auto set_itr = set.begin();
+
+    while(set_itr != set.end()) {
+      vec.push_back((*set_itr)->key);
+      set_itr++;
+    }
+
+    return vec;
   } else {
-    return set<Vertex*>();
+    return vector<int>();
   }
 }
 
@@ -65,8 +74,9 @@ bool Graph::HasPath(int key1, int key2) {
   return result;
 }
 
-set<int> Graph::GetConnectedComponent(int cc) {
+vector<int> Graph::GetConnectedComponent(int cc) {
   set<int> keys;
+  vector<int> keys_vec;
   auto map_itr = adj_map.begin();
 
   while(map_itr != adj_map.end()) {
@@ -87,7 +97,9 @@ set<int> Graph::GetConnectedComponent(int cc) {
     map_itr++;
   }
 
-  return keys;
+  std::copy(keys.begin(), keys.end(), std::back_inserter(keys_vec));
+
+  return keys_vec;
 }
 
 

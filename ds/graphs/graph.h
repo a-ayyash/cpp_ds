@@ -12,11 +12,11 @@ public:
   }
 
   virtual void AddEdge(int key1, int key2);
-  set<Vertex*> GetNabors(int v) const;
-  int count() const;
+  vector<int> GetNabors(int v) const;
   bool HasPath(int key1, int key2);
   void CalculateConnectedComponents();
-  set<int> GetConnectedComponent(int cc);
+  vector<int> GetConnectedComponent(int cc);
+  int count() const;
 
 private:
   void Explore(Vertex *v, int cc);
@@ -31,12 +31,6 @@ private:
 
 
 inline ostream& operator<< (ostream& out, const Graph& g) {
-  for(int i = 0; i < g.count(); i++) {
-    out << "for v = " << i << endl;
-    set<Vertex*> v = g.GetNabors(i);
-
-    out << endl;
-  }
 
   return out;
 }
