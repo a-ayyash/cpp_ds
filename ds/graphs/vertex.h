@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 class Vertex {
 public:
   Vertex() {
@@ -18,4 +21,8 @@ public:
   bool visited;
   long ID;//unused for now, for uniquness. Assume keys are unique.
   int ccID;
+
+  bool operator<(const Vertex &v) const {
+    return key < v.key;
+  }
 };

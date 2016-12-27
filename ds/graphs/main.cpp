@@ -10,26 +10,39 @@ int main() {
   g.AddEdge(3,2);
   */
 
-  Graph g(4);
+  Graph g;
   g.AddEdge(1,2);
   g.AddEdge(3,2);
 
-  cout << g.HasPath(1,4) << endl;
+  set<Vertex*> s = g.GetNabors(2);
 
-  cout << g << endl;
+  cout << " asdf " << s.size() << endl;
 
-  Graph g2(4);
+  auto itr = s.begin();
+  while(itr != s.end()) {
+    cout << (*itr)->key << endl;
+    itr++;
+  }
+
+
+  //cout << g.HasPath(1,4) << endl;
+
+  //cout << g << endl;
+
+  Graph g2;
   g2.AddEdge(1,2);
   g2.AddEdge(3,2);
-  g2.AddEdge(4,3);
-  g2.AddEdge(1,4);
+  g2.AddEdge(4,5);
+  g2.AddEdge(1,3);
 
-  cout << g2.HasPath(1,4) << endl;
+  //cout << g2.HasPath(1,4) << endl;
 
-  cout << g2 << endl;
+  //cout << g2 << endl;
 
   cout << "#######################################" << endl;
 
   g2.DFS();
+
+  cout << "5,4   = " << g2.HasPath(5,4) << endl;
   return 0;
 }
